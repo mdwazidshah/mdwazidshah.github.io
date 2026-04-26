@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Lock Pro | Technical Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --app-bg: #0f172a;
+        }
+
+        .volume-header {
+            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent);
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .command-center {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Live Volume Demo */
+        .live-demo {
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .volume-control-wrapper {
+            margin-bottom: 2rem;
+        }
+
+        .volume-slider {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+            border: 2px solid white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .volume-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* Tech Specs */
+        .tech-specs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .spec-card {
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: var(--transition-fast);
+        }
+
+        .spec-card:hover {
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        .spec-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .spec-value {
+            font-weight: 700;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .code-snippet {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            padding: 1.5rem;
+            background: #000;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <a href="../index.html" class="back-link" style="position: fixed; top: 40px; left: 40px; z-index: 100;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back
+    </a>
+
+    <section class="volume-header">
+        <div class="container">
+            <div class="command-center">
+                <div class="hero-info">
+                    <span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.2);">Utility • 4.8★ Rating</span>
+                    <h1 class="gradient-text" style="font-size: 4rem; line-height: 1.1; margin: 1rem 0;">Precision Audio <br>Command Center</h1>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 500px; margin-bottom: 2rem;">
+                        Volume Lock Pro isn't just a locker; it's a granular control system for Android audio streams. Designed for professionals who need absolute silence or consistent loudness.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://play.google.com/store/apps/details?id=com.tools.volumelock.pro" target="_blank" class="btn btn-primary">Download Pro APK</a>
+                        <a href="./volume-lock-policy.html" class="btn btn-secondary">Privacy & Security</a>
+                    </div>
+                </div>
+                <div class="live-demo glass" style="border-radius: 30px;">
+                    <div class="control-header" style="margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.2rem;">Live Control Simulation</h3>
+                        <span id="system-status" style="color: var(--accent-blue); font-size: 0.8rem; display: flex; align-items: center; gap: 5px;">
+                            <span class="status-dot"></span> System Protected
+                        </span>
+                    </div>
+                    
+                    <div class="volume-control-wrapper">
+                        <div class="control-header">
+                            <span style="display: flex; align-items: center; gap: 8px;">🔊 Media</span>
+                            <span class="lock-status" data-stream="media">🔒 Locked at <span class="val">85</span>%</span>
+                        </div>
+                        <input type="range" class="volume-slider" data-stream="media" value="85" min="0" max="100">
+                    </div>
+
+                    <div class="volume-control-wrapper">
+                        <div class="control-header">
+                            <span style="display: flex; align-items: center; gap: 8px;">🔔 Notifications</span>
+                            <span class="lock-status" data-stream="notif">🔓 Unlocked</span>
+                        </div>
+                        <input type="range" class="volume-slider" data-stream="notif" value="40" min="0" max="100">
+                    </div>
+
+                    <div class="volume-control-wrapper" style="margin-bottom: 0;">
+                        <div class="control-header">
+                            <span style="display: flex; align-items: center; gap: 8px;">⏰ Alarms</span>
+                            <span class="lock-status" data-stream="alarm">🔒 Locked at <span class="val">100</span>%</span>
+                        </div>
+                        <input type="range" class="volume-slider" data-stream="alarm" value="100" min="0" max="100">
+                    </div>
+
+                    <script>
+                        document.querySelectorAll('.volume-slider').forEach(slider => {
+                            slider.addEventListener('input', (e) => {
+                                const stream = e.target.dataset.stream;
+                                const val = e.target.value;
+                                const status = document.querySelector(`.lock-status[data-stream="${stream}"]`);
+                                
+                                if (status.textContent.includes('Locked')) {
+                                    status.querySelector('.val').textContent = val;
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="tech-specs">
+                <div class="spec-card glass">
+                    <span class="spec-icon">📱</span>
+                    <span class="spec-label">Target SDK</span>
+                    <span class="spec-value">Android 14 (Level 34)</span>
+                </div>
+                <div class="spec-card glass">
+                    <span class="spec-icon">⚡</span>
+                    <span class="spec-label">Core Engine</span>
+                    <span class="spec-value">Native Android API</span>
+                </div>
+                <div class="spec-card glass">
+                    <span class="spec-icon">🔋</span>
+                    <span class="spec-label">Battery Impact</span>
+                    <span class="spec-value">&lt; 0.01% / day</span>
+                </div>
+                <div class="spec-card glass">
+                    <span class="spec-icon">🛡️</span>
+                    <span class="spec-label">Permissions</span>
+                    <span class="spec-value">Zero Personal Data</span>
+                </div>
+            </div>
+
+            <div class="architecture-grid">
+                <div class="arch-info">
+                    <h2 style="margin-bottom: 1.5rem;">The Architecture of <span class="gradient-text">Control</span></h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Built using a foreground service architecture to ensure persistence even when the system is under heavy memory pressure. The app utilizes a low-latency listener to detect and revert unauthorized volume changes in real-time.
+                    </p>
+                    <ul style="list-style: none; color: var(--text-muted);">
+                        <li style="margin-bottom: 0.8rem;">✅ Real-time Stream Interception</li>
+                        <li style="margin-bottom: 0.8rem;">✅ Boot-time Persistence</li>
+                        <li style="margin-bottom: 0.8rem;">✅ Granular "Do Not Disturb" Overrides</li>
+                    </ul>
+                </div>
+                <div class="code-snippet">
+                    <p style="color: #6a9955; margin-bottom: 1rem;">// Real-time Volume Enforcement</p>
+                    <code style="color: #9cdcfe;">
+                        <span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">enforceVolume</span>(<span style="color: #9cdcfe;">int</span> stream, <span style="color: #9cdcfe;">int</span> target) {<br>
+                        &nbsp;&nbsp;<span style="color: #569cd6;">if</span> (currentVolume(stream) != target) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;setStreamVolume(stream, target, 0);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #dcdcaa;">notifyUser</span>(<span style="color: #ce9178;">"Stream Locked"</span>);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">Looking for a custom utility app? <a href="../index.html#contact" class="gradient-text">Let's talk technical.</a></p>
+        </div>
+    </footer>
+</body>
+</html>
