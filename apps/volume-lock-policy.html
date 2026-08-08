@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Volume Lock Pro | Md Wazid Ali</title>
+    <title>Privacy Policy - Volume Lock: Sound Control | Md Wazid Ali</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <style>
         .policy-container {
-            max-width: 800px;
-            margin: 100px auto;
-            padding: 4rem;
+            padding: 2rem 0 4rem 0;
         }
         .policy-content h2 {
             margin-top: 2.5rem;
             margin-bottom: 1rem;
             font-size: 1.8rem;
         }
-        .policy-content p {
+        .policy-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            color: var(--text-color);
+        }
+        .policy-content p, .policy-content ul {
             margin-bottom: 1.5rem;
             color: var(--text-muted);
+        }
+        .policy-content ul {
+            padding-left: 20px;
+        }
+        .policy-content li {
+            margin-bottom: 0.5rem;
         }
         .last-updated {
             color: var(--primary);
@@ -36,34 +45,56 @@
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
     </script>
-    <a href="./volume-lock.html" class="back-link" style="position: fixed; top: 40px; left: 40px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        Back to Details
-    </a>
-
+    
     <div class="container">
-        <div class="policy-container glass">
-            <span class="last-updated">Last Updated: April 26, 2026</span>
+        <div style="margin-top: 3rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+            <h2 style="margin: 0; font-size: 1.8rem; color: var(--text-main); font-weight: bold;">Volume Lock: Sound Control</h2>
+        </div>
+        <div class="policy-container" style="padding-top: 1rem;">
+            <span class="last-updated">Last Updated: August 8, 2026</span>
             <h1 class="gradient-text">Privacy Policy</h1>
-            <p>Your privacy is important to us. It is Md Wazid Ali's policy to respect your privacy regarding any information we may collect while operating our app, Volume Lock Pro.</p>
-
+            
             <div class="policy-content">
-                <h2>1. Information We Collect</h2>
-                <p>Volume Lock Pro is designed to work locally on your device. We do not collect, store, or transmit any personal data or usage information to external servers.</p>
+                <h2>1. Introduction</h2>
+                <p>This Privacy Policy explains how Volume Lock: Sound Control ("we", "our", or "us") handles information when you use our mobile application (the "App"). We are committed to protecting your privacy and ensuring transparency about how our app operates.</p>
 
-                <h2>2. Device Permissions</h2>
-                <p>The app requires access to system volume settings and "Do Not Disturb" permissions solely to perform its core function: locking and controlling your device's volume levels. This data never leaves your device.</p>
+                <h2>2. Data Collection and Usage</h2>
+                <p>Volume Lock: Sound Control is designed with privacy as a priority. The core functionality of the app operates entirely on your device.</p>
+                <ul>
+                    <li><strong>Personal Data:</strong> We do not collect, store, or transmit any personally identifiable information (PII) such as your name, email address, or phone number.</li>
+                    <li><strong>App Usage Data:</strong> The app itself does not collect analytics or usage data regarding how you use the app's features.</li>
+                </ul>
 
-                <h2>3. Third-Party Services</h2>
-                <p>The app may use Google Play Services for core functionality and updates. These services may collect information as per their own privacy policies.</p>
+                <h2>3. Third-Party Services and Subscriptions</h2>
+                <p>While the app itself does not collect personal data, we offer premium features through a subscription model. To process these transactions safely and securely, we utilize third-party payment processors (such as Google Play Billing).</p>
+                <ul>
+                    <li><strong>Payment Information:</strong> We do not directly collect or store your credit card information or payment details. All purchases are handled directly by the app store's billing system.</li>
+                    <li><strong>Subscription Status:</strong> The payment processor may collect data related to your purchase history and current subscription status to manage your access to premium features.</li>
+                </ul>
+                <p>Please review the privacy policy of the respective app store (e.g., Google Play) for information on how they handle your payment data.</p>
 
-                <h2>4. Data Security</h2>
-                <p>Since no personal data is collected by us, your data remains secure within your device's own security environment.</p>
+                <h2>4. Required Device Permissions</h2>
+                <p>To function correctly, Volume Lock: Sound Control requires certain permissions on your device. These permissions are strictly used to enable the app's core features (locking and managing volume levels) and are never used to monitor your activity or collect data.</p>
+                <ul>
+                    <li><strong>Do Not Disturb (DND) Access:</strong> Required to manage volume settings and ensure alarms or important notifications function properly when limits are active.</li>
+                    <li><strong>Accessibility Service:</strong> If enabled for advanced volume locking, this service is only used to detect volume button presses and enforce your set limits. It does not read your screen content or monitor your typing.</li>
+                    <li><strong>Notification Access:</strong> Used to maintain the volume lock service running reliably in the background.</li>
+                </ul>
 
-                <h2>5. Contact Us</h2>
-                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:hello@wazidali.dev" class="gradient-text">hello@wazidali.dev</a>.</p>
+                <h2>5. Data Security</h2>
+                <p>Because we do not collect or transmit your personal data to any external servers, the risk of data breaches from our end is virtually eliminated. All your volume settings and preferences remain securely stored locally on your device.</p>
+
+                <h2>6. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any changes will be posted within the app or on this page. We encourage you to review this policy periodically.</p>
+
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions, concerns, or suggestions regarding this Privacy Policy, please contact us at:</p>
+                <p>Email: <a href="mailto:mdwazidali205@gmail.com" style="color: var(--primary);">mdwazidali205@gmail.com</a></p>
+                
+                <p style="margin-top: 2rem;">Last Updated: August 8, 2026</p>
             </div>
         </div>
     </div>
+    <script src="../main.js" defer></script>
 </body>
 </html>

@@ -16,22 +16,12 @@
 </head>
 
 <body class="dark-theme">
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-    <div id="scroll-progress" class="scroll-progress"></div>
     <nav id="navbar" class="navbar">
         <div class="container nav-content">
             <div class="logo">WAZID<span>.</span></div>
             <ul class="nav-links">
                 <li><a href="#hero" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
@@ -54,7 +44,6 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
             </div>
         </div>
     </nav>
@@ -67,8 +56,7 @@
                     <p>I'm Md Wazid Ali, a Fullstack Developer and Freelancer. I specialize in building high-performance
                         mobile and web applications with Flutter, Android, and Go.</p>
                     <div class="hero-btns">
-                        <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                        <a href="#services" class="btn btn-secondary">My Services</a>
+                        <a href="#services" class="btn btn-primary">My Services</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -88,9 +76,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="mouse"></div>
             </div>
         </section>
 
@@ -115,9 +100,9 @@
                         <p>End-to-end development from high-concurrency backends in Go to pixel-perfect Flutter
                             frontends.</p>
                         <ul class="service-features">
-                            <li>● High-Load Backends</li>
-                            <li>● Reactive Frontends</li>
-                            <li>● State Management</li>
+                            <li>High-Load Backends</li>
+                            <li>Reactive Frontends</li>
+                            <li>State Management</li>
                         </ul>
                     </div>
                     <div class="service-card glass">
@@ -136,9 +121,9 @@
                         <p>Leveraging AWS and GCP to build resilient architectures that scale automatically with your
                             business.</p>
                         <ul class="service-features">
-                            <li>● Serverless Logic</li>
-                            <li>● Containerization</li>
-                            <li>● CI/CD Pipelines</li>
+                            <li>Serverless Logic</li>
+                            <li>Containerization</li>
+                            <li>CI/CD Pipelines</li>
                         </ul>
                     </div>
                     <div class="service-card glass">
@@ -155,176 +140,17 @@
                         <p>Implementing deep security protocols and encryption to protect user data and ensure system
                             integrity.</p>
                         <ul class="service-features">
-                            <li>● OAuth Integration</li>
-                            <li>● Data Encryption</li>
-                            <li>● Security Auditing</li>
+                            <li>OAuth Integration</li>
+                            <li>Data Encryption</li>
+                            <li>Security Auditing</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Published <span class="gradient-text">Apps</span></h2>
-                    <p>A collection of applications successfully launched on the Play Store and App Store.</p>
-                </div>
-                <div class="portfolio-grid">
-                    <!-- Featured App: Volume Lock Pro -->
-                    <div class="portfolio-card glass featured-project">
-                        <div class="portfolio-img">
-                            <a href="/apps/volume-lock.html">
-                                <img src="./assets/volume_lock.png" alt="Volume Lock Pro">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="/apps/volume-lock.html" class="btn btn-small">Explore Case Study</a>
-                            </div>
-                            <div class="project-badge">Published</div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-header-flex">
-                                <h3><a href="/apps/volume-lock.html" style="color: inherit; text-decoration: none;">Volume Lock Pro</a></h3>
-                                <div class="rating">⭐⭐⭐⭐⭐</div>
-                            </div>
-                            <p>An advanced audio management suite for Android, providing granular control over system volume streams with real-time enforcement and persistence.</p>
-                            <div class="tags">
-                                <span>Flutter</span>
-                                <span>Android SDK</span>
-                                <span>Material 3</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Coming Soon: FitTrack AI -->
-                    <div class="portfolio-card glass">
-                        <div class="portfolio-img">
-                            <img src="./assets/fittrack.png" alt="FitTrack AI">
-                            <div class="portfolio-overlay">
-                                <span class="btn btn-small">Coming Soon</span>
-                            </div>
-                            <div class="project-badge" style="background: var(--secondary);">In Development</div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-header-flex">
-                                <h3>FitTrack AI</h3>
-                            </div>
-                            <p>Smart fitness tracker leveraging AI to provide personalized health insights and workout optimizations.</p>
-                            <div class="tags">
-                                <span>AI/ML</span>
-                                <span>Flutter</span>
-                                <span>Firebase</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Coming Soon: SwiftShop -->
-                    <div class="portfolio-card glass">
-                        <div class="portfolio-img">
-                            <img src="./assets/swiftshop.png" alt="SwiftShop">
-                            <div class="portfolio-overlay">
-                                <span class="btn btn-small">Coming Soon</span>
-                            </div>
-                            <div class="project-badge" style="background: var(--accent);">Concept</div>
-                        </div>
-                        <div class="portfolio-info">
-                            <div class="portfolio-header-flex">
-                                <h3>SwiftShop</h3>
-                            </div>
-                            <p>An ultra-fast e-commerce experience focused on minimalist design and seamless checkout flows.</p>
-                            <div class="tags">
-                                <span>E-commerce</span>
-                                <span>Go</span>
-                                <span>Clean UI</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact section">
-            <div class="container">
-                <div class="glass contact-card">
-                    <div class="contact-header" style="text-align: center; margin-bottom: 3rem;">
-                        <h2>Ready to <span class="gradient-text">Collaborate?</span></h2>
-                        <p>Let's build something extraordinary together. Send me a message below.</p>
-                    </div>
-                    <div class="contact-grid">
-                        <div class="contact-info-panel">
-                            <div class="info-card">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                </div>
-                                <div>
-                                    <label>Email Me</label>
-                                    <span>hello@wazidali.dev</span>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                </div>
-                                <div>
-                                    <label>Location</label>
-                                    <span>Global (Remote)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <form class="contact-form-inner">
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="How can I help you?" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message 🚀</button>
-                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">WAZID<span>.</span></div>
-                    <p>Engineering digital excellence through modern code and creative design. Specializing in
-                        high-performance applications.</p>
-                </div>
-                <div class="footer-nav">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Social</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="GitHub">GH</a>
-                        <a href="#" aria-label="LinkedIn">LI</a>
-                        <a href="#" aria-label="Twitter">TW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Md Wazid Ali. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#" style="color: inherit; text-decoration: none; margin-left: 2rem;">Privacy Policy</a>
-                    <a href="#" style="color: inherit; text-decoration: none; margin-left: 2rem;">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="./main.js"></script>
+    <script src="./main.js" defer></script>
 </body>
 
 </html>
