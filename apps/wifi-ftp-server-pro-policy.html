@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Smart WiFi FTP Server Pro | Md Wazid Ali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .policy-container {
+            padding: 2rem 0 4rem 0;
+        }
+        .policy-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .policy-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            color: var(--text-color);
+        }
+        .policy-content p, .policy-content ul {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+        .policy-content ul {
+            padding-left: 20px;
+        }
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+        .last-updated {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: block;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    
+    <div class="container">
+        <div style="margin-top: 3rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+            <h2 style="margin: 0; font-size: 1.8rem; color: var(--text-main); font-weight: bold;">Smart WiFi FTP Server Pro</h2>
+        </div>
+        <div class="policy-container" style="padding-top: 1rem;">
+            <span class="last-updated">Last Updated: March 13, 2025</span>
+            <h1 class="gradient-text">Privacy Policy</h1>
+            <p><strong>Smart WiFi FTP Server Pro</strong> ("we," "us," or "Our") is committed to protecting your privacy. This Privacy Policy explains how we handle information in connection with our mobile application.</p>
+
+            <div class="policy-content">
+                <h2>1. Information Collection and Use</h2>
+                <p><strong>Smart WiFi FTP Server Pro</strong> is designed to work as a local FTP server. We do <strong>not</strong> collect, store, or transmit any personal information or data from your device to our own servers or any third parties.</p>
+                <ul>
+                    <li><strong>File Access:</strong> The app requires permission to access your device's storage (<code>MANAGE_EXTERNAL_STORAGE</code>, <code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code>) solely to enable the FTP server functionality. This allows you to transfer files between your device and other devices on your local network. Your files remain on your device and are only transmitted to devices you specifically connect to via the FTP protocol.</li>
+                    <li><strong>Network Information:</strong> The app requires access to your network state (<code>ACCESS_WIFI_STATE</code>, <code>ACCESS_NETWORK_STATE</code>, <code>INTERNET</code>) to function as a server on your local Wi-Fi network. This information is used only to manage the connection and is not collected or stored.</li>
+                </ul>
+
+                <h2>2. Third-Party Services</h2>
+                <p>We do not use any third-party analytics, advertising SDKs, or tracking tools. All operations are performed locally on your device.</p>
+
+                <h2>3. Permissions</h2>
+                <p>The app requests the following permissions for the reasons stated:</p>
+                <ul>
+                    <li><strong>Storage Access:</strong> To read and write files during FTP transfers.</li>
+                    <li><strong>Wi-Fi/Network:</strong> To create a local server connection.</li>
+                    <li><strong>Foreground Service:</strong> To keep the FTP server running while the app is in the background.</li>
+                    <li><strong>Post Notifications:</strong> To show the status of the running server.</li>
+                    <li><strong>Wake Lock:</strong> To prevent the device from sleeping while a file transfer is in progress.</li>
+                </ul>
+
+                <h2>4. Security</h2>
+                <p>Since FTP (File Transfer Protocol) is inherently unencrypted by default, we recommend using the app only on trusted private networks. Any data transferred over an unencrypted FTP connection may be visible to others on the same network.</p>
+
+                <h2>5. Children's Privacy</h2>
+                <p>Our services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+
+                <h2>6. Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. These updates are effective immediately after they are posted.</p>
+
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <a href="mailto:mdwazidali205@gmail.com" style="color: var(--primary);">mdwazidali205@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="../main.js" defer></script>
+</body>
+</html>

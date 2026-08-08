@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Apps | Md Wazid Ali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .apps-container {
+            padding: 4rem 0;
+            min-height: 100vh;
+        }
+        .apps-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .app-card {
+            padding: 2.5rem 2rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+        .app-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+        .app-card .btn {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    
+    <div class="container apps-container">
+        <div class="apps-header">
+            <h1 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1rem;">My Applications</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                View the privacy policies and terms of use for all published applications.
+            </p>
+        </div>
+
+        <div class="apps-grid">
+            <!-- Volume Lock Pro -->
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h3>Volume Lock Pro</h3>
+                <a href="volume-lock-pro.html" class="btn btn-primary">Privacy Policy</a>
+            </div>
+
+            <!-- Volume Lock: Sound Control -->
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                </div>
+                <h3>Volume Lock: Sound Control</h3>
+                <a href="volume-lock-policy.html" class="btn btn-primary">Privacy Policy</a>
+            </div>
+
+            <!-- Smart WiFi FTP Server Pro -->
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                </div>
+                <h3>Smart WiFi FTP Server Pro</h3>
+                <a href="wifi-ftp-server-pro-policy.html" class="btn btn-primary">Privacy Policy</a>
+            </div>
+
+            <!-- Photo Widget Plus -->
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                </div>
+                <h3>Photo Widget Plus</h3>
+                <a href="photo-widget-plus-policy.html" class="btn btn-primary">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js" defer></script>
+</body>
+</html>
