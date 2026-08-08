@@ -8,18 +8,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../style.css">
     <style>
+        body {
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Background Glow Mesh */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            filter: blur(100px);
+        }
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            filter: blur(100px);
+        }
+        
         .apps-container {
             padding: 4rem 0;
             min-height: 100vh;
         }
         .apps-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
+            position: relative;
         }
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         .app-card {
             padding: 2.5rem 2rem;
@@ -30,35 +59,82 @@
             align-items: center;
             justify-content: space-between;
             height: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+            animation: fadeUp 0.8s ease backwards;
         }
+        
+        /* Staggered Animations */
+        .app-card:nth-child(1) { animation-delay: 0.1s; }
+        .app-card:nth-child(2) { animation-delay: 0.2s; }
+        .app-card:nth-child(3) { animation-delay: 0.3s; }
+        .app-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.15);
-            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.4) !important;
         }
         .app-icon {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             background: var(--bg-card);
-            border-radius: 20px;
+            border-radius: 22px;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 2px 5px rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
         }
+        .app-card:hover .app-icon {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         .app-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--text-main);
+            font-weight: 700;
             line-height: 1.3;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(16, 185, 129, 0.5);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+            color: var(--primary);
+            transform: translateY(-2px);
         }
         .app-card .btn {
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.9rem;
             font-size: 1rem;
+            font-weight: 600;
+            border-radius: 12px;
         }
     </style>
 </head>
@@ -79,71 +155,77 @@
     </nav>
 
     <div class="container apps-container" style="padding-top: 2rem;">
-        <div class="apps-header" style="margin-bottom: 5rem;">
-            <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 1.5rem; letter-spacing: -1px;">My Applications</h1>
-            <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-                Explore my portfolio of published mobile applications and review their privacy policies and terms of use.
+        <div class="apps-header" style="margin-bottom: 4rem; position: relative; z-index: 10;">
+            <div class="badge" style="margin-bottom: 1.5rem; font-size: 0.9rem; padding: 0.5rem 1.5rem;">My Portfolio</div>
+            <h1 class="gradient-text" style="font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -1.5px; line-height: 1.1;">Published Applications</h1>
+            <p style="color: var(--text-muted); font-size: 1.25rem; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+                Explore my custom mobile applications and review their privacy policies.
             </p>
         </div>
 
         <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
             <!-- Game Booster -->
-            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, var(--bg-card) 0%, rgba(30,30,30,0.4) 100%);">
+            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(20,20,20,0.8) 100%); backdrop-filter: blur(20px);">
                 <div class="app-icon" style="background: transparent; overflow: hidden; padding: 0;">
                     <img src="../assets/game-booster.png" alt="Game Booster Icon" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
                 </div>
+                <div class="badge">Gaming Tool</div>
                 <h3>Game Booster</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1;">Optimize your device's performance for a smoother, lag-free gaming experience.</p>
+                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; flex-grow: 1; line-height: 1.5;">Optimize your device's performance for a smoother, lag-free gaming experience.</p>
                 <div style="width: 100%; display: flex; flex-direction: column; gap: 0.8rem;">
-                    <button class="btn btn-primary" style="width: 100%; opacity: 0.5; cursor: not-allowed;">Policy Coming Soon</button>
+                    <button class="btn btn-outline" style="width: 100%; opacity: 0.6; cursor: not-allowed; border-color: rgba(255,255,255,0.1); color: var(--text-muted);">Policy Coming Soon</button>
                 </div>
             </div>
 
             <!-- Volume Lock Pro -->
-            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, var(--bg-card) 0%, rgba(30,30,30,0.4) 100%);">
+            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(20,20,20,0.8) 100%); backdrop-filter: blur(20px);">
                 <div class="app-icon" style="background: transparent; overflow: hidden; padding: 0;">
                     <img src="../assets/volume-lock.png" alt="Volume Lock Icon" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
                 </div>
+                <div class="badge">Utility (Pro)</div>
                 <h3>Volume Lock Pro</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1;">Advanced sound control utility that locks your volume settings to prevent accidental changes.</p>
+                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; flex-grow: 1; line-height: 1.5;">Advanced sound control utility that locks your volume settings to prevent accidental changes.</p>
                 <div style="width: 100%; display: flex; flex-direction: column; gap: 0.8rem;">
-                    <a href="volume-lock-pro.html" class="btn btn-primary" style="width: 100%;">Privacy Policy</a>
+                    <a href="volume-lock-pro.html" class="btn btn-outline" style="width: 100%;">Privacy Policy</a>
                 </div>
             </div>
 
             <!-- Volume Lock: Sound Control -->
-            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, var(--bg-card) 0%, rgba(30,30,30,0.4) 100%);">
+            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(20,20,20,0.8) 100%); backdrop-filter: blur(20px);">
                 <div class="app-icon" style="background: transparent; overflow: hidden; padding: 0;">
                     <img src="../assets/volume-lock.png" alt="Volume Lock Icon" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
                 </div>
+                <div class="badge">Utility</div>
                 <h3>Volume Lock: Sound Control</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1;">A free version of the volume locking tool designed to secure your device's audio levels seamlessly.</p>
+                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; flex-grow: 1; line-height: 1.5;">A free version of the volume locking tool designed to secure your device's audio levels seamlessly.</p>
                 <div style="width: 100%; display: flex; flex-direction: column; gap: 0.8rem;">
-                    <a href="volume-lock-policy.html" class="btn btn-primary" style="width: 100%;">Privacy Policy</a>
+                    <a href="volume-lock-policy.html" class="btn btn-outline" style="width: 100%;">Privacy Policy</a>
                 </div>
             </div>
 
             <!-- Smart WiFi FTP Server Pro -->
-            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, var(--bg-card) 0%, rgba(30,30,30,0.4) 100%);">
+            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(20,20,20,0.8) 100%); backdrop-filter: blur(20px);">
                 <div class="app-icon" style="background: transparent; overflow: hidden; padding: 0;">
                     <img src="../assets/wifi-ftp.png" alt="WiFi FTP Server Icon" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
                 </div>
+                <div class="badge">Productivity</div>
                 <h3>Smart WiFi FTP Server Pro</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1;">Turn your Android device into a robust wireless FTP server for fast, cable-free file transfers over WiFi.</p>
+                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; flex-grow: 1; line-height: 1.5;">Turn your Android device into a robust wireless FTP server for fast, cable-free file transfers over WiFi.</p>
                 <div style="width: 100%; display: flex; flex-direction: column; gap: 0.8rem;">
-                    <a href="wifi-ftp-server-pro-policy.html" class="btn btn-primary" style="width: 100%;">Privacy Policy</a>
+                    <a href="wifi-ftp-server-pro-policy.html" class="btn btn-outline" style="width: 100%;">Privacy Policy</a>
                 </div>
             </div>
 
             <!-- Photo Widget Plus -->
-            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, var(--bg-card) 0%, rgba(30,30,30,0.4) 100%);">
+            <div class="glass app-card" style="border: 1px solid rgba(255,255,255,0.05); background: linear-gradient(145deg, rgba(30,30,30,0.6) 0%, rgba(20,20,20,0.8) 100%); backdrop-filter: blur(20px);">
                 <div class="app-icon" style="background: transparent; overflow: hidden; padding: 0;">
                     <img src="../assets/photo-widget.png" alt="Photo Widget Plus Icon" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
                 </div>
+                <div class="badge">Personalization</div>
                 <h3>Photo Widget Plus</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1;">Personalize your home screen with beautiful, highly customizable photo widgets and slideshows.</p>
+                <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem; flex-grow: 1; line-height: 1.5;">Personalize your home screen with beautiful, highly customizable photo widgets and slideshows.</p>
                 <div style="width: 100%; display: flex; flex-direction: column; gap: 0.8rem;">
-                    <a href="photo-widget-plus-policy.html" class="btn btn-primary" style="width: 100%;">Privacy Policy</a>
+                    <a href="photo-widget-plus-policy.html" class="btn btn-outline" style="width: 100%;">Privacy Policy</a>
                 </div>
             </div>
         </div>
