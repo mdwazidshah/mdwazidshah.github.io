@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for ScrollBuddy: Track Every Reel and ScrollBuddy Pro: Reel Tracker.">
+    <title>Privacy Policy - ScrollBuddy | Md Wazid Ali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .policy-container {
+            padding: 0 0 5rem;
+        }
+        .policy-content p,
+        .policy-content ul {
+            color: var(--text-muted);
+        }
+        .policy-app-subtitle {
+            margin: 0;
+            color: var(--text-muted);
+        }
+        .policy-content h2 {
+            margin: 2.5rem 0 0.85rem;
+            font-size: 1.45rem;
+        }
+        .policy-content p,
+        .policy-content ul {
+            margin-bottom: 1rem;
+        }
+        .policy-content ul {
+            padding-left: 1.4rem;
+        }
+        .policy-content li {
+            margin-bottom: 0.55rem;
+        }
+        .policy-dates {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .policy-content a {
+            color: var(--primary);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+            .policy-container {
+                padding-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <main class="container policy-container">
+        <header class="policy-app-header">
+            <img class="policy-app-icon" src="../../assets/scrollbuddy.png" alt="ScrollBuddy app icon">
+            <div>
+                <h2>ScrollBuddy</h2>
+                <p class="policy-app-subtitle">Privacy Policy for ScrollBuddy and ScrollBuddy Pro</p>
+            </div>
+        </header>
+
+        <article class="policy-content">
+            <p class="policy-dates">Effective date: July 19, 2025 | Last updated: July 19, 2025</p>
+            <h1 class="gradient-text">Privacy Policy</h1>
+
+            <h2>Applies to</h2>
+            <ul>
+                <li>ScrollBuddy: Track Every Reel (com.tools.scrollbuddy), the free edition.</li>
+                <li>ScrollBuddy Pro: Reel Tracker (com.tools.scrollbuddy.pro), the paid Pro edition.</li>
+            </ul>
+
+            <h2>1. Who This Policy Covers</h2>
+            <p>This Privacy Policy applies to both applications published by the same developer on Google Play: ScrollBuddy: Track Every Reel (package ID: com.tools.scrollbuddy), the free edition, and ScrollBuddy Pro: Reel Tracker (package ID: com.tools.scrollbuddy.pro), the paid Pro edition. Both apps share the same codebase and privacy practices. Any difference between the two editions that is relevant to privacy is noted explicitly in this document. Where no difference is mentioned, the same rule applies to both.</p>
+
+            <h2>2. What These Apps Do</h2>
+            <p>ScrollBuddy and ScrollBuddy Pro are digital-wellbeing tools. They count how many times you scroll through short-form content - Reels, Shorts, and Stories - on Instagram, YouTube, Facebook, and Snapchat. Their sole purpose is to surface your own scroll habits so you can make more intentional choices about your screen time. The Pro edition unlocks additional features such as per-app tracking toggles and expanded daily limit controls, but does not collect any additional data compared to the free edition.</p>
+
+            <h2>3. Data Collected and How It Is Stored</h2>
+            <p>All data is stored exclusively in Android's local SharedPreferences storage on your device. Nothing is ever transmitted to a server, third party, or cloud service.</p>
+            <p>We store the following items locally on your device only:</p>
+            <ul>
+                <li>Daily scroll count for Instagram, YouTube, Facebook, and Snapchat - to show you today's usage per app.</li>
+                <li>Current date (yyyy-MM-dd) - to automatically reset counts at the start of each new day.</li>
+                <li>Daily scroll limit setting - to trigger a warning when your goal is reached.</li>
+                <li>Per-app tracking toggles - to let you choose which apps to monitor.</li>
+                <li>Theme preference (Light / Dark / System) - to remember your chosen app theme.</li>
+                <li>Onboarding completion flag - to skip the intro screen after first launch.</li>
+            </ul>
+            <p>We never collect your messages, posts, or social media content. We never collect passwords or login credentials. We never collect location, contacts, camera, microphone, or files. We never collect device identifiers, advertising IDs, or analytics data of any kind.</p>
+
+            <h2>4. Accessibility Service - Why and How We Use It</h2>
+            <p>Both apps use Android's Accessibility Service to detect scroll events inside supported social media apps. This is the only reliable way to count scroll gestures across third-party applications without requiring root access or device administration privileges.</p>
+            <p><strong>What the Accessibility Service detects:</strong> a scroll event signal (TYPE_VIEW_SCROLLED) - the moment a scroll gesture occurs - and the package name of the app where the scroll happened (for example, com.instagram.android).</p>
+            <p><strong>What the Accessibility Service never reads:</strong> any content, text, images, or videos you are viewing; on-screen text, passwords, or form inputs of any kind; notifications, clipboard, or data from any other app; anything from apps outside Instagram, YouTube, Facebook, and Snapchat.</p>
+            <p>The service monitors exactly five package names: com.instagram.android, com.google.android.youtube, com.facebook.katana, com.facebook.android, and com.snapchat.android. It listens only for scroll events and does not extract or store any screen content.</p>
+            <p>You must manually enable the Accessibility Service in your device's Android Settings. You can disable it at any time from the same Settings screen, which immediately stops all scroll tracking.</p>
+
+            <h2>5. Foreground Service and Persistent Notification</h2>
+            <p>When tracking is active, both apps run a foreground service that displays a persistent, silent notification: "ScrollBuddy is tracking - Counting your reels and shorts in real time." Android requires this notification so the service is always visible to you. The service and its notification stop the moment you tap Stop Tracking or disable the Accessibility Service in Android Settings. The foreground service type is specialUse, declared in the Play Console with an explicit use-case justification as required by Google Play policy.</p>
+
+            <h2>6. Internet Permission</h2>
+            <p>Both apps declare the INTERNET permission in their manifest. In the current version this permission is declared for planned future features but is not actively used - no network requests are made and no data is transmitted to any remote server.</p>
+
+            <h2>7. Data Retention and Deletion</h2>
+            <p>Scroll counts are automatically reset every day - only today's count is ever stored at one time. Settings and preferences persist until you change them or uninstall the app. Uninstalling either app permanently deletes all stored data - there is no server-side backup or cloud copy. You can manually reset today's counts at any time from within the app.</p>
+
+            <h2>8. Third-Party SDKs, Analytics, and Advertising</h2>
+            <p>Neither ScrollBuddy: Track Every Reel nor ScrollBuddy Pro: Reel Tracker includes any third-party analytics, crash-reporting, advertising, or tracking libraries. There is no Firebase, Google Analytics, Facebook SDK, Adjust, Mixpanel, or similar integration in either app.</p>
+
+            <h2>9. Difference Between Free and Pro Editions</h2>
+            <p>The Pro edition unlocks additional in-app features. From a privacy standpoint, both editions are identical - they collect the same data listed in Section 3, use the same Accessibility Service configuration, and store everything locally on your device only. The Pro edition does not collect any extra personal data, does not connect to any server, and does not share data with any third party.</p>
+
+            <h2>10. Children's Privacy</h2>
+            <p>Neither app is directed at children under the age of 13. We do not knowingly collect personal information from children. Because no personal data is collected from any user, there is no risk of children's data being processed or stored.</p>
+
+            <h2>11. Your Rights</h2>
+            <p>Because all data is stored locally on your device and no personal information is collected by us, there is no data held by us to access, correct, or delete. You are in full control: disable the Accessibility Service at any time to stop all tracking instantly; reset your scroll counts from within the app at any time; uninstall the app to erase all locally stored data permanently.</p>
+
+            <h2>12. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy when new features are added to either app, such as the planned Friends / Battles feature or optional cloud sync. When we do, the updated policy will be published at this URL with a revised effective date. Continued use of either app after the update constitutes your acceptance of the revised policy.</p>
+
+            <h2>13. Contact Us</h2>
+            <p>If you have any questions or concerns about this Privacy Policy or the data practices of either app, please contact us:</p>
+            <p>Email: <a href="mailto:hazroonkhatoon.dev@gmail.com">hazroonkhatoon.dev@gmail.com</a></p>
+            <p>Apps on Google Play: ScrollBuddy: Track Every Reel &amp; ScrollBuddy Pro: Reel Tracker</p>
+        </article>
+    </main>
+
+    <script src="../../main.js" defer></script>
+</body>
+</html>
