@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Apps | Md Wazid Ali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            position: relative;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at top left, rgba(16,185,129,0.14), transparent 26%),
+                radial-gradient(circle at bottom right, rgba(52,211,153,0.10), transparent 32%),
+                #0b0f10;
+        }
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 36rem;
+            height: 36rem;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: 0;
+        }
+        body::before {
+            top: -11rem;
+            left: -8rem;
+            background: rgba(16, 185, 129, 0.28);
+        }
+        body::after {
+            right: -8rem;
+            bottom: -10rem;
+            background: rgba(34, 197, 94, 0.18);
+        }
+
+        .apps-container {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 0 6rem;
+            min-height: 100vh;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.25rem;
+            padding: 0.85rem 1rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 1.05rem;
+            background: rgba(10, 18, 17, 0.72);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 14px 30px rgba(0,0,0,0.18);
+            backdrop-filter: blur(12px);
+        }
+        .topbar .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .brand-mark {
+            width: 2.2rem;
+            height: 2.2rem;
+            display: grid;
+            place-items: center;
+            border-radius: 0.75rem;
+            background: rgba(16,185,129,0.12);
+            border: 1px solid rgba(16,185,129,0.2);
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 800;
+        }
+        .route-tag {
+            padding: 0.38rem 0.82rem;
+            border-radius: 999px;
+            background: rgba(16,185,129,0.06);
+            color: var(--primary);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: 1px solid rgba(16,185,129,0.14);
+        }
+        .apps-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .app-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.25rem;
+            padding: 1.15rem 1rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 340px;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+            background: linear-gradient(180deg, rgba(17,17,17,0.96), rgba(17,17,17,0.84));
+            border: 1px solid rgba(255,255,255,0.06);
+            backdrop-filter: blur(18px);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 16px 32px rgba(0,0,0,0.18);
+        }
+        .app-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16,185,129,0.26);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 18px 34px rgba(0,0,0,0.22);
+        }
+        .app-icon {
+            width: 88px;
+            height: 88px;
+            border-radius: 1.1rem;
+            overflow: hidden;
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 12px 18px rgba(0,0,0,0.14);
+        }
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.36rem 0.76rem;
+            border-radius: 999px;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+            border: 1px solid rgba(16,185,129,0.08);
+        }
+        .app-card h3 {
+            font-size: 1.28rem;
+            margin: 0 0 0.62rem 0;
+            line-height: 1.25;
+            color: var(--text-main);
+            font-weight: 700;
+            text-align: center;
+        }
+        .app-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.55;
+            margin-bottom: 1rem;
+            min-height: 78px;
+            text-align: center;
+        }
+        .app-actions {
+            width: 100%;
+            margin-top: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+        }
+        .btn {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.72rem 0.8rem;
+            border-radius: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            border: 1px solid rgba(16,185,129,0.2);
+            background: rgba(16,185,129,0.05);
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+        }
+        .btn:hover {
+            transform: translateY(-1px);
+            background: rgba(16,185,129,0.08);
+            box-shadow: 0 8px 18px rgba(16,185,129,0.08);
+        }
+        .btn.secondary {
+            border-color: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.02);
+            color: var(--text-main);
+        }
+        @media (max-width: 768px) {
+            .apps-container {
+                padding-top: 2.5rem;
+            }
+            .topbar {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            .apps-header h1 {
+                font-size: 2.5rem !important;
+            }
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <div class="container apps-container">
+        <div class="topbar">
+            <a href="../index.html" class="brand">
+                <span class="brand-mark">W</span>
+                <span>Back to Portfolio</span>
+            </a>
+            <span class="route-tag">Direct Route</span>
+        </div>
+
+        <div class="apps-header">
+            <div class="badge" style="margin-bottom: 1.2rem;">Apps Directory</div>
+            <h1 class="gradient-text" style="font-size: 3.2rem; margin: 0 0 1rem; letter-spacing: -0.06em; line-height: 1.1;">Published Applications</h1>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7;">
+                A direct route to all public Android apps and their privacy policies.
+            </p>
+        </div>
+
+        <div class="apps-grid">
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <img src="../assets/volume-lock.png" alt="Volume Lock Pro Icon">
+                </div>
+                <h3>Volume Lock Pro</h3>
+                <p>Advanced sound control utility that locks your volume settings to prevent accidental changes.</p>
+                <div class="app-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.zidit.volume.lock" target="_blank" rel="noreferrer" class="btn secondary">Play Store</a>
+                    <a href="volume-lock-pro.html" class="btn">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <img src="../assets/volume-lock.png" alt="Volume Lock Sound Control Icon">
+                </div>
+                <h3>Volume Lock: Sound Control</h3>
+                <p>A free version of the volume locking tool designed to secure your device's audio levels seamlessly.</p>
+                <div class="app-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.zidit.volume.soundcontrol" target="_blank" rel="noreferrer" class="btn secondary">Play Store</a>
+                    <a href="policy/volume-lock-policy.html" class="btn">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <img src="../assets/wifi-ftp.png" alt="Smart WiFi FTP Server Pro Icon">
+                </div>
+                <h3>Smart WiFi FTP Server Pro</h3>
+                <p>Turn your Android device into a robust wireless FTP server for fast, cable-free file transfers over WiFi.</p>
+                <div class="app-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.wifi.ftp.server.pro" target="_blank" rel="noreferrer" class="btn secondary">Play Store</a>
+                    <a href="policy/wifi-ftp-server-pro-policy.html" class="btn">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <img src="../assets/photo-widget.png" alt="Photo Widget Plus Icon">
+                </div>
+                <h3>Photo Widget Plus</h3>
+                <p>Personalize your home screen with beautiful, highly customizable photo widgets and slideshows.</p>
+                <div class="app-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.photo.widget.plus" target="_blank" rel="noreferrer" class="btn secondary">Play Store</a>
+                    <a href="policy/photo-widget-plus-policy.html" class="btn">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="glass app-card">
+                <div class="app-icon">
+                    <img src="../assets/game-booster.png" alt="Turbo Game Booster Icon">
+                </div>
+                <h3>Turbo Game Booster</h3>
+                <p>Game library, launcher, and device insight tool for smoother gaming setup and performance monitoring.</p>
+                <div class="app-actions">
+                    <a href="https://play.google.com/store/apps/details?id=com.tools.turbogamebooster.pro" target="_blank" rel="noreferrer" class="btn secondary">Play Store</a>
+                    <a href="policy/turbo-game-booster-policy.html" class="btn">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms of Service - Turbo Game Booster | Md Wazid Ali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .policy-container {
+            padding: 2rem 0 4rem 0;
+        }
+        .policy-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        .policy-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            color: var(--text-color);
+        }
+        .policy-content p, .policy-content ul {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+        .policy-content ul {
+            padding-left: 20px;
+        }
+        .policy-content li {
+            margin-bottom: 0.5rem;
+        }
+        .last-updated {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: block;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <div class="container">
+        <div style="margin-top: 3rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+            <h2 style="margin: 0; font-size: 1.8rem; color: var(--text-main); font-weight: bold;">Turbo Game Booster</h2>
+        </div>
+
+        <div class="policy-container" style="padding-top: 1rem;">
+            <div class="policy-content">
+                <span class="last-updated">Last updated: October 9, 2026</span>
+                <h1 class="gradient-text">Privacy Policy</h1>
+                <p><strong>App name:</strong> Turbo Game Booster</p>
+                <p><strong>Package name:</strong> com.tools.turbogamebooster.pro</p>
+                <p><strong>Developer contact:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
+
+                <h2>1. Overview</h2>
+                <p>Turbo Game Booster is a game library and launcher app that helps users organize their installed games, launch them, and view supported device information.</p>
+                <p>The app does not require users to create an account. According to the app's current implementation, its preferences and saved game library are stored locally on the device.</p>
+
+                <h2>2. Information Stored on Your Device</h2>
+                <p>The app stores the following information locally to provide its features:</p>
+                <ul>
+                    <li>Saved game library: App names and package names of games added by the user.</li>
+                    <li>Theme preference: Dark, Light, or System theme selection.</li>
+                    <li>Accent color: The selected app appearance color.</li>
+                    <li>Haptic feedback preference: The user's selected feedback setting, if applicable.</li>
+                    <li>Floating HUD preferences: Position, size, opacity, color, and selected display options.</li>
+                </ul>
+                <p>This information is used to maintain the user's preferences and app functionality.</p>
+
+                <h2>3. Information Accessed by the App</h2>
+                <p>Depending on the features used and device capabilities, Turbo Game Booster may access the following information:</p>
+                <ul>
+                    <li>Installed apps: App names and package names used to display apps that users can add to their game library.</li>
+                    <li>Battery temperature: Displayed where the device provides this information.</li>
+                    <li>CPU usage: Displayed where supported by the app and device.</li>
+                    <li>RAM usage: Displayed as supported by the device and Android version.</li>
+                    <li>Network connectivity: Used to check whether a network connection is available.</li>
+                    <li>Network latency: The app may send network requests to public DNS servers, including 8.8.8.8 and 1.1.1.1, over port 53 to estimate network response time.</li>
+                    <li>Wi-Fi information: Wi-Fi frequency and link speed, where available and accessible.</li>
+                    <li>Device information: Available hardware, display, memory, battery, sensor, and build information.</li>
+                    <li>Screen refresh rate: Displayed where supported by the device.</li>
+                </ul>
+                <p>The information listed above is accessed to provide the corresponding app features. Network requests used for latency measurements communicate with external DNS servers. Network operators or service providers may process connection information according to their own practices.</p>
+
+                <h2>4. Permissions and Their Purposes</h2>
+                <ul>
+                    <li><strong>INTERNET:</strong> Allows the app to make network requests for network latency measurements.</li>
+                    <li><strong>ACCESS_NETWORK_STATE:</strong> Allows the app to check network connectivity status.</li>
+                    <li><strong>ACCESS_WIFI_STATE:</strong> Allows the app to access available Wi-Fi connection information, such as frequency and link speed, where supported.</li>
+                    <li><strong>SYSTEM_ALERT_WINDOW — Display over other apps:</strong> Allows the optional Floating HUD to appear over other apps, including games. Users must grant this permission through Android Settings. The overlay can be used only when enabled by the user.</li>
+                </ul>
+                <p>The app's available functionality may vary depending on Android version, device manufacturer, system restrictions, and granted permissions.</p>
+
+                <h2>5. Data Collection, Sharing, and Advertising</h2>
+                <p>The app is designed to store its saved game library and preferences locally on the device.</p>
+                <p>The developer's current implementation is intended not to transmit this locally stored information to the developer's servers or upload it to a developer-operated cloud service.</p>
+                <p>The app is not intended to collect personal information for advertising or analytics. Any statement about third-party SDKs, advertising, analytics, crash reporting, or other data transmission must reflect the actual libraries and services included in the published app.</p>
+                <p>Network latency measurements may communicate with external DNS servers, as described above.</p>
+
+                <h2>6. The Boost Now Feature</h2>
+                <p>The Boost Now feature requests Java Virtual Machine (JVM) garbage collection within the app's runtime.</p>
+                <p>This request may help reclaim unused memory associated with the app itself. Its effect depends on the runtime and device.</p>
+                <p>Turbo Game Booster does not claim that this operation:</p>
+                <ul>
+                    <li>Kills other apps or processes.</li>
+                    <li>Increases CPU or GPU clock speeds.</li>
+                    <li>Changes system-level performance settings.</li>
+                    <li>Guarantees higher game frame rates.</li>
+                    <li>Guarantees lower network latency or reduced game lag.</li>
+                </ul>
+                <p>No specific performance improvement is guaranteed.</p>
+
+                <h2>7. Third-Party Apps and Services</h2>
+                <p>Certain actions may open third-party apps or services, including:</p>
+                <ul>
+                    <li><strong>Rate the App:</strong> Opens Google Play, where available.</li>
+                    <li><strong>Contact Support:</strong> Opens the device's default email app.</li>
+                    <li><strong>Privacy Policy:</strong> Opens the privacy policy webpage in a browser.</li>
+                    <li><strong>Share:</strong> Opens the device's sharing interface.</li>
+                </ul>
+                <p>Third-party services operate under their own terms and privacy policies. The developer does not control their independent data practices.</p>
+
+                <h2>8. Children's Privacy</h2>
+                <p>Turbo Game Booster is not intended to knowingly collect personal information from children.</p>
+                <p>The app's target audience and age-related practices are subject to the applicable Google Play requirements and relevant laws. If the app's data practices change, this policy will be updated as appropriate.</p>
+
+                <h2>9. Data Security and Retention</h2>
+                <p>Saved preferences and game library information are stored locally by the app. Users may remove saved games or clear the app's data through the available app or Android settings.</p>
+                <p>Uninstalling the app generally removes its local app data, subject to Android's backup and restore behavior and the device's configuration.</p>
+                <p>No method of electronic storage or transmission can be guaranteed to be completely secure.</p>
+
+                <h2>10. Changes to This Privacy Policy</h2>
+                <p>This Privacy Policy may be updated when the app's features, data practices, or legal requirements change. The updated version will include a revised “Last updated” date.</p>
+                <p>Users should review this page periodically for changes.</p>
+
+                <h2>11. Contact Us</h2>
+                <p>For questions or concerns about this Privacy Policy, contact:</p>
+                <p><strong>Email:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
+
+                <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0 2rem 0;">
+
+                <h1 class="gradient-text">Terms of Service</h1>
+                <span class="last-updated">Last updated: October 9, 2026</span>
+                <p>By using Turbo Game Booster, you agree to these Terms of Service.</p>
+
+                <h2>1. Acceptance and Use</h2>
+                <p>Turbo Game Booster helps users organize and launch games installed on their devices and view supported device information.</p>
+                <p>By using the app, you agree to use it in accordance with applicable laws and these Terms.</p>
+
+                <h2>2. Game Library and Launcher</h2>
+                <p>The app allows users to organize supported installed apps and launch saved games.</p>
+                <p>The availability and behavior of third-party games depend on the device, Android version, and the respective game's functionality and requirements.</p>
+                <p>Turbo Game Booster does not own or control third-party games launched through the app.</p>
+
+                <h2>3. System Information and Floating HUD</h2>
+                <p>The app may display available system information, including CPU usage, RAM usage, network latency, battery temperature, and screen refresh rate.</p>
+                <p>The availability and accuracy of these metrics may vary by device and Android version.</p>
+                <p>The optional Floating HUD requires the relevant system permission and may be disabled by the user at any time through the app or Android Settings, as applicable.</p>
+
+                <h2>4. Boost Now Feature</h2>
+                <p>The Boost Now feature requests JVM garbage collection within the app's runtime. It does not guarantee improved device performance, increased game FPS, reduced lag, lower network latency, or increased battery life.</p>
+                <p>Users should not rely on the app to change system-wide performance settings or manage other apps' processes.</p>
+
+                <h2>5. User Responsibilities</h2>
+                <p>You agree to use the app lawfully and not to misuse it in a way that violates applicable laws or the rights of others.</p>
+                <p>You are responsible for the games and third-party apps you choose to launch and for complying with their applicable terms.</p>
+
+                <h2>6. Third-Party Services</h2>
+                <p>The app may open Google Play, email applications, web browsers, or the system sharing interface.</p>
+                <p>Third-party services are provided independently and are subject to their own terms, privacy policies, and availability. The developer is not responsible for independent third-party services to the extent permitted by applicable law.</p>
+
+                <h2>7. Availability and Updates</h2>
+                <p>The app's features may change to maintain compatibility, improve functionality, or meet platform requirements. Certain features may not be available on all devices.</p>
+                <p>The developer does not guarantee uninterrupted, error-free, or universal operation.</p>
+
+                <h2>8. Disclaimer of Warranties</h2>
+                <p>To the extent permitted by applicable law, the app is provided on an “as available” basis without guarantees that every feature will operate on every device.</p>
+                <p>Nothing in these Terms excludes any consumer rights or other legal protections that cannot lawfully be excluded.</p>
+
+                <h2>9. Limitation of Liability</h2>
+                <p>To the extent permitted by applicable law, the developer will not be liable for indirect or consequential losses arising from the use of the app.</p>
+                <p>Nothing in these Terms limits liability where such limitation is prohibited by applicable law.</p>
+
+                <h2>10. Changes to These Terms</h2>
+                <p>These Terms may be updated as the app changes or when required by applicable law. The updated version will display the revised date.</p>
+
+                <h2>11. Contact</h2>
+                <p>For questions about these Terms of Service, contact:</p>
+                <p><strong>Email:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../main.js" defer></script>
+</body>
+</html>
