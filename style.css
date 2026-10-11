@@ -92,52 +92,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
 }
 
-.policy-app-header {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin: 3rem 0 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.policy-app-header > div {
-    min-width: 0;
-}
-
-.policy-app-icon {
-    width: 88px;
-    height: 88px;
-    flex: 0 0 88px;
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    object-fit: cover;
-}
-
-.policy-app-header h2 {
-    margin: 0;
-    color: var(--text-main);
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-@media (max-width: 600px) {
-    .policy-app-header {
-        gap: 1rem;
-    }
-
-    .policy-app-icon {
-        width: 68px;
-        height: 68px;
-        flex-basis: 68px;
-        border-radius: 14px;
-    }
-
-    .policy-app-header h2 {
-        font-size: 1.45rem;
-    }
-}
-
 /* Navbar */
 .navbar {
     position: sticky;
@@ -503,4 +457,61 @@ a.info-text:hover {
 .reveal-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Shared app branding for privacy policy pages */
+.policy-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.container:not(.policy-container) > .policy-header {
+    margin-top: 3rem;
+}
+
+.policy-icon {
+    width: 88px;
+    height: 88px;
+    flex: 0 0 88px;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+}
+
+.policy-header h2 {
+    margin: 0 0 0.3rem;
+    font-size: 1.8rem;
+}
+
+.policy-header p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.policy-shell .policy-header h2 {
+    margin: 0 0 0.3rem;
+    padding: 0;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .policy-header {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .policy-icon {
+        width: 68px;
+        height: 68px;
+        flex-basis: 68px;
+        border-radius: 14px;
+    }
+
+    .policy-header h2 {
+        font-size: 1.45rem;
+    }
 }

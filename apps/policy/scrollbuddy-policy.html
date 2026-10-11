@@ -10,15 +10,35 @@
     <link rel="stylesheet" href="../../style.css">
     <style>
         .policy-container {
-            padding: 0 0 5rem;
+            padding: 3rem 0 5rem;
         }
+        .policy-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .policy-icon {
+            width: 88px;
+            height: 88px;
+            flex: 0 0 88px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+        .policy-header h2 {
+            margin: 0 0 0.3rem;
+            font-size: 1.8rem;
+        }
+        .policy-header p,
         .policy-content p,
         .policy-content ul {
             color: var(--text-muted);
         }
-        .policy-app-subtitle {
+        .policy-header p {
             margin: 0;
-            color: var(--text-muted);
         }
         .policy-content h2 {
             margin: 2.5rem 0 0.85rem;
@@ -49,6 +69,19 @@
             .policy-container {
                 padding-top: 2rem;
             }
+            .policy-header {
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .policy-icon {
+                width: 68px;
+                height: 68px;
+                flex-basis: 68px;
+                border-radius: 14px;
+            }
+            .policy-header h1 {
+                font-size: 1.45rem;
+            }
         }
     </style>
 </head>
@@ -59,11 +92,11 @@
     </script>
 
     <main class="container policy-container">
-        <header class="policy-app-header">
-            <img class="policy-app-icon" src="../../assets/scrollbuddy.png" alt="ScrollBuddy app icon">
+        <header class="policy-header">
+            <img class="policy-icon" src="../../assets/scrollbuddy.png" alt="ScrollBuddy app icon">
             <div>
                 <h2>ScrollBuddy</h2>
-                <p class="policy-app-subtitle">Privacy Policy for ScrollBuddy and ScrollBuddy Pro</p>
+                <p>Privacy Policy for ScrollBuddy and ScrollBuddy Pro</p>
             </div>
         </header>
 
