@@ -57,147 +57,130 @@
 
         <div class="policy-container" style="padding-top: 1rem;">
             <div class="policy-content">
-                <span class="last-updated">Last updated: October 9, 2026</span>
-                <h1 class="gradient-text">Privacy Policy</h1>
+                <span class="last-updated">Last updated: October 14, 2026</span>
+                <h1 class="gradient-text">PRIVACY POLICY</h1>
                 <p><strong>App name:</strong> Turbo Game Booster</p>
                 <p><strong>Package name:</strong> com.tools.turbogamebooster.pro</p>
                 <p><strong>Developer contact:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
 
                 <h2>1. Overview</h2>
-                <p>Turbo Game Booster is a game library and launcher app that helps users organize their installed games, launch them, and view supported device information.</p>
-                <p>The app does not require users to create an account. According to the app's current implementation, its preferences and saved game library are stored locally on the device.</p>
+                <p>Turbo Game Booster is a dedicated game library, launcher, and system monitor application designed to help users organize installed games, launch them with tactical focus protocols, and view real-time device hardware metrics.
+                The app does not require account creation, registration, or login. All user preferences and game library configurations are stored strictly on the local device.</p>
 
                 <h2>2. Information Stored on Your Device</h2>
-                <p>The app stores the following information locally to provide its features:</p>
+                <p>The app stores the following data locally on your device to maintain your customized settings:</p>
                 <ul>
-                    <li>Saved game library: App names and package names of games added by the user.</li>
-                    <li>Theme preference: Dark, Light, or System theme selection.</li>
-                    <li>Accent color: The selected app appearance color.</li>
-                    <li>Haptic feedback preference: The user's selected feedback setting, if applicable.</li>
-                    <li>Floating HUD preferences: Position, size, opacity, color, and selected display options.</li>
+                    <li>Saved game library: Package names and display labels of games explicitly added by the user.</li>
+                    <li>Visual theme preferences: Dark, Light, or System default appearance selection.</li>
+                    <li>Accent color: The chosen cyber theme color.</li>
+                    <li>Haptic feedback preference: User choice for tactile button feedback.</li>
+                    <li>Floating HUD preferences: User-configured screen position, size scale, opacity, color, and metric visibility toggles.</li>
+                    <li>Gaming Focus protocols: User opt-in settings for Focus Mode (Do Not Disturb) and Screen Brightness Lock.</li>
                 </ul>
-                <p>This information is used to maintain the user's preferences and app functionality.</p>
+                <p>This data is stored purely locally in Android private app storage and is never uploaded to any remote server or cloud database.</p>
 
                 <h2>3. Information Accessed by the App</h2>
-                <p>Depending on the features used and device capabilities, Turbo Game Booster may access the following information:</p>
+                <p>To deliver real-time metrics and launcher features, Turbo Game Booster accesses the following device status information:</p>
                 <ul>
-                    <li>Installed apps: App names and package names used to display apps that users can add to their game library.</li>
-                    <li>Battery temperature: Displayed where the device provides this information.</li>
-                    <li>CPU usage: Displayed where supported by the app and device.</li>
-                    <li>RAM usage: Displayed as supported by the device and Android version.</li>
-                    <li>Network connectivity: Used to check whether a network connection is available.</li>
-                    <li>Network latency: The app may send network requests to public DNS servers, including 8.8.8.8 and 1.1.1.1, over port 53 to estimate network response time.</li>
-                    <li>Wi-Fi information: Wi-Fi frequency and link speed, where available and accessible.</li>
-                    <li>Device information: Available hardware, display, memory, battery, sensor, and build information.</li>
-                    <li>Screen refresh rate: Displayed where supported by the device.</li>
+                    <li>Installed apps: Package names and labels used to display launchable games in your library.</li>
+                    <li>Battery status & temperature: Device battery percentage, charging state, and temperature as reported by Android battery APIs.</li>
+                    <li>CPU usage: Estimated real-time processor load percentage.</li>
+                    <li>RAM usage: System memory metrics (used, available, and total memory) provided by Android ActivityManager.</li>
+                    <li>Network connectivity: State of Wi-Fi or mobile data connectivity.</li>
+                    <li>Network latency (Ping): Real-time response time measured by opening lightweight socket requests to public DNS resolvers (such as 8.8.8.8 and 1.1.1.1 over port 53).</li>
+                    <li>Wi-Fi connection info: Frequency band (2.4 GHz / 5 GHz) and link speed where accessible.</li>
+                    <li>Display specifications: Screen resolution, refresh rate (Hz), density, and graphical capabilities (OpenGL / Vulkan).</li>
+                    <li>Sensor capabilities: Presence of hardware sensors (gyroscope, accelerometer, vibrator).</li>
                 </ul>
-                <p>The information listed above is accessed to provide the corresponding app features. Network requests used for latency measurements communicate with external DNS servers. Network operators or service providers may process connection information according to their own practices.</p>
+                <p>This information is processed on-device in real-time solely to present hardware stats to the user. It is never logged, stored remotely, or transmitted.</p>
 
                 <h2>4. Permissions and Their Purposes</h2>
+                <p>Turbo Game Booster uses only the permissions necessary to provide its core features:</p>
                 <ul>
-                    <li><strong>INTERNET:</strong> Allows the app to make network requests for network latency measurements.</li>
-                    <li><strong>ACCESS_NETWORK_STATE:</strong> Allows the app to check network connectivity status.</li>
-                    <li><strong>ACCESS_WIFI_STATE:</strong> Allows the app to access available Wi-Fi connection information, such as frequency and link speed, where supported.</li>
-                    <li><strong>SYSTEM_ALERT_WINDOW — Display over other apps:</strong> Allows the optional Floating HUD to appear over other apps, including games. Users must grant this permission through Android Settings. The overlay can be used only when enabled by the user.</li>
+                    <li><strong>INTERNET:</strong> Allows socket requests to public DNS servers to measure live network latency (ping) in milliseconds.</li>
+                    <li><strong>ACCESS_NETWORK_STATE:</strong> Allows checking whether Wi-Fi or mobile cellular data is active.</li>
+                    <li><strong>ACCESS_WIFI_STATE:</strong> Reads connection frequency and link speed where supported by the device.</li>
+                    <li><strong>SYSTEM_ALERT_WINDOW (Display over other apps):</strong> Required for the optional Floating Performance HUD to appear over active gameplay. This permission must be explicitly granted by the user via Android System Settings.</li>
+                    <li><strong>FOREGROUND_SERVICE &amp; FOREGROUND_SERVICE_SPECIAL_USE:</strong> Keeps the user-initiated Floating HUD actively running over games and maintains a persistent system notification so the user can see its status and stop the overlay at any time.</li>
+                    <li><strong>POST_NOTIFICATIONS:</strong> Required on Android 13 (API level 33) and above exclusively to display the active status and "Stop" control notification for the Floating HUD. The app does not send marketing, advertising, or spam notifications.</li>
+                    <li><strong>ACCESS_NOTIFICATION_POLICY (Do Not Disturb Access):</strong> Used solely for the optional "Focus Mode" protocol, which silences incoming notifications during gaming sessions to prevent interruptions. The user must explicitly grant Do Not Disturb access in System Settings.</li>
+                    <li><strong>WRITE_SETTINGS (Modify System Settings):</strong> Used solely for the optional "Brightness Lock" protocol, which maintains screen brightness during gameplay. The user must explicitly grant permission in System Settings.</li>
                 </ul>
-                <p>The app's available functionality may vary depending on Android version, device manufacturer, system restrictions, and granted permissions.</p>
 
                 <h2>5. Data Collection, Sharing, and Advertising</h2>
-                <p>The app is designed to store its saved game library and preferences locally on the device.</p>
-                <p>The developer's current implementation is intended not to transmit this locally stored information to the developer's servers or upload it to a developer-operated cloud service.</p>
-                <p>The app is not intended to collect personal information for advertising or analytics. Any statement about third-party SDKs, advertising, analytics, crash reporting, or other data transmission must reflect the actual libraries and services included in the published app.</p>
-                <p>Network latency measurements may communicate with external DNS servers, as described above.</p>
-
-                <h2>6. The Boost Now Feature</h2>
-                <p>The Boost Now feature requests Java Virtual Machine (JVM) garbage collection within the app's runtime.</p>
-                <p>This request may help reclaim unused memory associated with the app itself. Its effect depends on the runtime and device.</p>
-                <p>Turbo Game Booster does not claim that this operation:</p>
                 <ul>
-                    <li>Kills other apps or processes.</li>
-                    <li>Increases CPU or GPU clock speeds.</li>
-                    <li>Changes system-level performance settings.</li>
-                    <li>Guarantees higher game frame rates.</li>
-                    <li>Guarantees lower network latency or reduced game lag.</li>
+                    <li><strong>Zero Data Collection:</strong> We do not collect, transmit, store on servers, or sell any personal information, device identifiers (such as IMEI or Android ID), location data, or usage logs.</li>
+                    <li><strong>No Third-Party Trackers:</strong> The app contains no third-party advertising SDKs, behavioral trackers, or analytics platforms.</li>
+                    <li><strong>Network Interactions:</strong> External network communication is strictly confined to socket latency checks to public DNS servers as described above.</li>
                 </ul>
-                <p>No specific performance improvement is guaranteed.</p>
+
+                <h2>6. The Boost Performance Feature</h2>
+                <p>The Boost Performance feature triggers standard Java Virtual Machine (JVM) garbage collection and memory cache reclamation within the app's own process.
+                Turbo Game Booster makes no deceptive claims and does not guarantee:</p>
+                <ul>
+                    <li>Force-closing or terminating background processes of other third-party applications.</li>
+                    <li>Overclocking hardware CPU or GPU frequencies.</li>
+                    <li>Altering system kernel parameters or bypassing OS thermal throttling.</li>
+                    <li>Guaranteed increases in game frame rates (FPS) or elimination of network latency.</li>
+                </ul>
+                <p>The feature operates strictly within non-root Android system boundaries as a convenience utility.</p>
 
                 <h2>7. Third-Party Apps and Services</h2>
-                <p>Certain actions may open third-party apps or services, including:</p>
+                <p>Certain user actions trigger standard Android system intents to launch external services:</p>
                 <ul>
-                    <li><strong>Rate the App:</strong> Opens Google Play, where available.</li>
-                    <li><strong>Contact Support:</strong> Opens the device's default email app.</li>
-                    <li><strong>Privacy Policy:</strong> Opens the privacy policy webpage in a browser.</li>
-                    <li><strong>Share:</strong> Opens the device's sharing interface.</li>
+                    <li><strong>Rate the App:</strong> Directs to the Google Play Store.</li>
+                    <li><strong>Contact Support:</strong> Opens the device's default email client.</li>
+                    <li><strong>Privacy Policy:</strong> Opens this privacy policy in the device's web browser.</li>
+                    <li><strong>Share:</strong> Opens Android's standard sharing sheet.</li>
                 </ul>
-                <p>Third-party services operate under their own terms and privacy policies. The developer does not control their independent data practices.</p>
+                <p>These external services operate under their own independent terms and privacy policies.</p>
 
                 <h2>8. Children's Privacy</h2>
-                <p>Turbo Game Booster is not intended to knowingly collect personal information from children.</p>
-                <p>The app's target audience and age-related practices are subject to the applicable Google Play requirements and relevant laws. If the app's data practices change, this policy will be updated as appropriate.</p>
+                <p>Turbo Game Booster is not directed at children under the age of 13. The app does not knowingly collect personal information from children.</p>
 
                 <h2>9. Data Security and Retention</h2>
-                <p>Saved preferences and game library information are stored locally by the app. Users may remove saved games or clear the app's data through the available app or Android settings.</p>
-                <p>Uninstalling the app generally removes its local app data, subject to Android's backup and restore behavior and the device's configuration.</p>
-                <p>No method of electronic storage or transmission can be guaranteed to be completely secure.</p>
+                <p>All user preferences, game shortcuts, and configurations are stored in private local app storage. Users can permanently delete all stored data at any time by clearing the app data or uninstalling the app from their device.</p>
 
-                <h2>10. Changes to This Privacy Policy</h2>
-                <p>This Privacy Policy may be updated when the app's features, data practices, or legal requirements change. The updated version will include a revised “Last updated” date.</p>
-                <p>Users should review this page periodically for changes.</p>
+                <h2>10. Changes to This Policy</h2>
+                <p>We may periodically update this Privacy Policy to reflect app updates, new Android platform standards, or legal requirements. The updated document will always feature a revised "Last updated" date.</p>
 
                 <h2>11. Contact Us</h2>
-                <p>For questions or concerns about this Privacy Policy, contact:</p>
-                <p><strong>Email:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
+                <p>If you have any questions or feedback regarding this Privacy Policy, please contact:
+                <br><strong>Email:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
 
                 <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0 2rem 0;">
 
-                <h1 class="gradient-text">Terms of Service</h1>
-                <span class="last-updated">Last updated: October 9, 2026</span>
-                <p>By using Turbo Game Booster, you agree to these Terms of Service.</p>
+                <h1 class="gradient-text">TERMS OF SERVICE</h1>
+                <span class="last-updated">Last updated: October 14, 2026</span>
+                <p>By installing or using Turbo Game Booster, you agree to these Terms of Service.</p>
 
-                <h2>1. Acceptance and Use</h2>
-                <p>Turbo Game Booster helps users organize and launch games installed on their devices and view supported device information.</p>
-                <p>By using the app, you agree to use it in accordance with applicable laws and these Terms.</p>
+                <h2>1. Acceptance of Terms</h2>
+                <p>Turbo Game Booster provides an organizer for installed games and a real-time device telemetry HUD. By using the app, you agree to comply with all applicable laws and these Terms.</p>
 
                 <h2>2. Game Library and Launcher</h2>
-                <p>The app allows users to organize supported installed apps and launch saved games.</p>
-                <p>The availability and behavior of third-party games depend on the device, Android version, and the respective game's functionality and requirements.</p>
-                <p>Turbo Game Booster does not own or control third-party games launched through the app.</p>
+                <p>The app allows users to create shortcuts to launch games installed on their device. Turbo Game Booster does not host, modify, or own third-party games. The performance and availability of launched games remain entirely dependent on the respective game and your device hardware.</p>
 
-                <h2>3. System Information and Floating HUD</h2>
-                <p>The app may display available system information, including CPU usage, RAM usage, network latency, battery temperature, and screen refresh rate.</p>
-                <p>The availability and accuracy of these metrics may vary by device and Android version.</p>
-                <p>The optional Floating HUD requires the relevant system permission and may be disabled by the user at any time through the app or Android Settings, as applicable.</p>
+                <h2>3. Telemetry and Floating HUD</h2>
+                <p>Hardware telemetry (CPU load, RAM usage, ping, and battery temperature) is estimated using standard Android APIs and hardware sensors. Accuracy may vary depending on device manufacturer and Android version. The optional Floating HUD requires user permission and can be dismissed or disabled at any time.</p>
 
-                <h2>4. Boost Now Feature</h2>
-                <p>The Boost Now feature requests JVM garbage collection within the app's runtime. It does not guarantee improved device performance, increased game FPS, reduced lag, lower network latency, or increased battery life.</p>
-                <p>Users should not rely on the app to change system-wide performance settings or manage other apps' processes.</p>
+                <h2>4. Performance Disclaimers</h2>
+                <p>The Boost Performance tool performs standard runtime memory trimming. Turbo Game Booster does not alter hardware limits, overclock processors, or promise specific FPS or latency improvements.</p>
 
-                <h2>5. User Responsibilities</h2>
-                <p>You agree to use the app lawfully and not to misuse it in a way that violates applicable laws or the rights of others.</p>
-                <p>You are responsible for the games and third-party apps you choose to launch and for complying with their applicable terms.</p>
+                <h2>5. User Conduct</h2>
+                <p>You agree to use Turbo Game Booster only for lawful purposes on devices you are authorized to operate.</p>
 
-                <h2>6. Third-Party Services</h2>
-                <p>The app may open Google Play, email applications, web browsers, or the system sharing interface.</p>
-                <p>Third-party services are provided independently and are subject to their own terms, privacy policies, and availability. The developer is not responsible for independent third-party services to the extent permitted by applicable law.</p>
+                <h2>6. Disclaimer of Warranties</h2>
+                <p>Turbo Game Booster is provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied. The developer does not guarantee error-free or uninterrupted operation.</p>
 
-                <h2>7. Availability and Updates</h2>
-                <p>The app's features may change to maintain compatibility, improve functionality, or meet platform requirements. Certain features may not be available on all devices.</p>
-                <p>The developer does not guarantee uninterrupted, error-free, or universal operation.</p>
+                <h2>7. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, the developer shall not be liable for any indirect, incidental, or consequential damages arising from the use of the app.</p>
 
-                <h2>8. Disclaimer of Warranties</h2>
-                <p>To the extent permitted by applicable law, the app is provided on an “as available” basis without guarantees that every feature will operate on every device.</p>
-                <p>Nothing in these Terms excludes any consumer rights or other legal protections that cannot lawfully be excluded.</p>
+                <h2>8. Modifications to Terms</h2>
+                <p>The developer reserves the right to modify these Terms as needed. Continued use of the app following any changes constitutes acceptance of the updated Terms.</p>
 
-                <h2>9. Limitation of Liability</h2>
-                <p>To the extent permitted by applicable law, the developer will not be liable for indirect or consequential losses arising from the use of the app.</p>
-                <p>Nothing in these Terms limits liability where such limitation is prohibited by applicable law.</p>
-
-                <h2>10. Changes to These Terms</h2>
-                <p>These Terms may be updated as the app changes or when required by applicable law. The updated version will display the revised date.</p>
-
-                <h2>11. Contact</h2>
-                <p>For questions about these Terms of Service, contact:</p>
-                <p><strong>Email:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
+                <h2>9. Contact Information</h2>
+                <p>For questions regarding these Terms of Service, please contact:
+                <br><strong>Email:</strong> <a href="mailto:hazroonkhatoon.dev@gmail.com" style="color: var(--primary);">hazroonkhatoon.dev@gmail.com</a></p>
             </div>
         </div>
     </div>
