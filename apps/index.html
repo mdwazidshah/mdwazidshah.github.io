@@ -131,9 +131,11 @@
             background: rgba(255,255,255,0.025);
             border: 1px solid rgba(255,255,255,0.05);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 12px 18px rgba(0,0,0,0.14);
-            font-size: 1.7rem;
-            font-weight: 800;
-            letter-spacing: -0.07em;
+        }
+        .app-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .badge {
             display: inline-block;
@@ -198,6 +200,13 @@
             background: rgba(255,255,255,0.02);
             color: var(--text-main);
         }
+        .typeflow-icon {
+            background: linear-gradient(135deg, rgba(37,99,235,0.25), rgba(45,212,191,0.2));
+            color: #ecfeff;
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.07em;
+        }
         @media (max-width: 768px) {
             .apps-container {
                 padding-top: 2.5rem;
@@ -240,7 +249,7 @@
 
         <div class="apps-grid">
             <div class="glass app-card">
-                <div class="app-icon" style="background: linear-gradient(135deg, rgba(37,99,235,0.25), rgba(45,212,191,0.2)); color: #ecfeff;">TF</div>
+                <div class="app-icon typeflow-icon">TF</div>
                 <h3>AI Voice Keyboard – TypeFlow</h3>
                 <p>Smart AI-powered keyboard with voice input, multilingual typing assistance, and a cleaner typing experience.</p>
                 <div class="app-actions">
@@ -346,7 +355,7 @@
             </div>
 
             <div class="glass app-card">
-                <div class="app-icon" style="background: linear-gradient(135deg, rgba(168,85,247,0.24), rgba(59,130,246,0.23)); color: #f5f3ff;">12</div>
+                <div class="app-icon" style="background: linear-gradient(135deg, rgba(168,85,247,0.24), rgba(59,130,246,0.23)); color: #f5f3ff; font-size: 1.9rem; font-weight: 800;">12</div>
                 <h3>12 Testers Community Hub</h3>
                 <p>Connect with Android developers and exchange peer testing for closed testing tracks.</p>
                 <div class="app-actions">
