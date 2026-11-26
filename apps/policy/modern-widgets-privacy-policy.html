@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Modern Widgets.">
+    <title>Privacy Policy - Modern Widgets | Md Wazid Ali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .policy-container { padding: 3rem 0 5rem; }
+        .policy-header { display: flex; align-items: center; gap: 1.25rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+        .policy-icon { width: 88px; height: 88px; flex: 0 0 88px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(16,185,129,0.24), rgba(59,130,246,0.23)); color: #ecfeff; font-size: 1.5rem; font-weight: 800; }
+        .policy-header h2 { margin: 0 0 0.3rem; font-size: 1.8rem; }
+        .policy-header p, .policy-content p, .policy-content ul { color: var(--text-muted); }
+        .policy-header p { margin: 0; }
+        .policy-content h2 { margin: 2.5rem 0 0.85rem; font-size: 1.45rem; }
+        .policy-content p, .policy-content ul { margin-bottom: 1rem; }
+        .policy-content ul { padding-left: 1.4rem; }
+        .policy-content li { margin-bottom: 0.55rem; }
+        .policy-dates { color: var(--primary); font-weight: 600; margin-bottom: 1.5rem; }
+        .policy-content a { color: var(--primary); }
+        @media (max-width: 600px) {
+            .container { padding: 0 1.25rem; }
+            .policy-container { padding-top: 2rem; }
+            .policy-header { align-items: flex-start; gap: 1rem; }
+            .policy-icon { width: 68px; height: 68px; flex-basis: 68px; border-radius: 14px; }
+            .policy-header h2 { font-size: 1.45rem; }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <main class="container policy-container">
+        <header class="policy-header">
+            <div class="policy-icon" aria-hidden="true">MW</div>
+            <div>
+                <h2>Modern Widgets</h2>
+                <p>Privacy Policy for Modern Widgets</p>
+            </div>
+        </header>
+        <article class="policy-content">
+            <p class="policy-dates">Effective date: November 26, 2026</p>
+            <h1 class="gradient-text">Privacy Policy for Modern Widgets</h1>
+
+            <h2>1. Overview</h2>
+            <p>Modern Widgets is an offline widget showcase and browsing application. We respect your privacy and built Modern Widgets to function without collecting, transmitting, or selling your personal information.</p>
+
+            <h2>2. Information Modern Widgets Does Not Collect</h2>
+            <p>Based on the design and permissions of Modern Widgets:</p>
+            <ul>
+                <li><strong>No Personal Information:</strong> Modern Widgets does not ask for or collect your name, email address, phone number, account credentials, or payment information.</li>
+                <li><strong>No Network or Internet Access:</strong> Modern Widgets does not declare the Android INTERNET permission and does not communicate with any remote servers.</li>
+                <li><strong>No Analytics, Advertising, or Tracking SDKs:</strong> Modern Widgets does not use third-party analytics, crash-reporting tools, ad networks, or tracking identifiers.</li>
+                <li><strong>No Device Sensor or System Data Access:</strong> Modern Widgets does not request permissions for location, contacts, camera, microphone, storage, Bluetooth, notifications, or installed-app queries. All widget previews (such as clock, weather, battery, music, and system tiles) and widget pack listings shown in Modern Widgets use static built-in sample content rather than reading your live device, weather, or personal data.</li>
+            </ul>
+
+            <h2>3. Data Stored Locally on Your Device</h2>
+            <p>To remember your settings, Modern Widgets stores a small set of preferences strictly on your device using Android Jetpack DataStore (<code>user_preferences</code>):</p>
+            <ul>
+                <li><strong>Appearance settings:</strong> Selected theme mode (System, Light, or Dark), Dynamic Color toggle, and Pure Black AMOLED toggle.</li>
+                <li><strong>Preference toggles:</strong> Local toggle states such as Notifications, Compact Grid, and Auto-Refresh Previews. Modern Widgets does not send push notifications or declare notification permissions.</li>
+                <li><strong>Favorites:</strong> The IDs of widgets you mark as favorites.</li>
+            </ul>
+            <p>This data never leaves your device through our servers and is removed if you clear storage for Modern Widgets or uninstall Modern Widgets.</p>
+
+            <h2>4. Device Backup</h2>
+            <p>Modern Widgets enables Android's standard allowBackup system setting (<code>android:allowBackup="true"</code>). If you have Android device backup enabled in your device or Google account settings, the Android operating system may automatically back up and restore your local preferences for Modern Widgets according to your device's backup settings and Google's privacy policy.</p>
+
+            <h2>5. External Links and Sharing</h2>
+            <p>From the Settings screen in Modern Widgets, if you choose to interact with:</p>
+            <ul>
+                <li><strong>Rate on Google Play:</strong> Modern Widgets opens the Google Play Store (or your web browser) to display the store listing.</li>
+                <li><strong>Share app:</strong> Modern Widgets opens Android's system share sheet with a text message and a Google Play Store link.</li>
+            </ul>
+            <p>These actions are initiated only when you tap them and hand off to external apps or services (such as Google Play or your chosen messaging app), which are governed by their own privacy policies.</p>
+
+            <h2>6. Children's Privacy</h2>
+            <p>Because Modern Widgets does not collect, store on external servers, or transmit any personal information from any user, Modern Widgets does not knowingly collect personal information from children.</p>
+
+            <h2>7. Changes to This Privacy Policy</h2>
+            <p>If future updates to Modern Widgets introduce new features, permissions, or data practices (such as network requests, analytics, or live system widgets), this Privacy Policy will be updated accordingly before those changes take effect.</p>
+
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy for Modern Widgets, please contact us at <a href="mailto:hazroonkhatoon.dev@gmail.com">hazroonkhatoon.dev@gmail.com</a>.</p>
+        </article>
+    </main>
+    <script src="../../main.js" defer></script>
+</body>
+</html>
