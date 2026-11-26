@@ -11,7 +11,8 @@
     <style>
         .policy-container { padding: 3rem 0 5rem; }
         .policy-header { display: flex; align-items: center; gap: 1.25rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-        .policy-icon { width: 88px; height: 88px; flex: 0 0 88px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(37,99,235,0.25), rgba(45,212,191,0.2)); color: #ecfeff; font-size: 1.7rem; font-weight: 800; }
+        .policy-icon { width: 88px; height: 88px; flex: 0 0 88px; border-radius: 18px; display: grid; place-items: center; overflow: hidden; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.05); }
+        .policy-icon img { width: 100%; height: 100%; object-fit: cover; }
         .policy-header h1 { margin: 0 0 0.3rem; font-size: 1.6rem; }
         .policy-header p, .policy-content p { color: var(--text-muted); }
         .policy-header p { margin: 0; }
@@ -34,7 +35,7 @@
     </script>
     <main class="container policy-container">
         <header class="policy-header">
-            <div class="policy-icon" aria-hidden="true">TF</div>
+            <div class="policy-icon" aria-hidden="true"><img src="../../assets/type-flow.png" alt="TypeFlow app icon"></div>
             <div>
                 <h1>AI Voice Keyboard – TypeFlow</h1>
                 <p>Privacy Policy</p>

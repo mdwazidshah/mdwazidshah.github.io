@@ -11,7 +11,8 @@
     <style>
         .policy-container { padding: 3rem 0 5rem; }
         .policy-header { display: flex; align-items: center; gap: 1.25rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-        .policy-icon { width: 88px; height: 88px; flex: 0 0 88px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(16,185,129,0.24), rgba(59,130,246,0.23)); color: #ecfeff; font-size: 1.5rem; font-weight: 800; }
+        .policy-icon { width: 88px; height: 88px; flex: 0 0 88px; border-radius: 18px; display: grid; place-items: center; overflow: hidden; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.05); }
+        .policy-icon img { width: 100%; height: 100%; object-fit: cover; }
         .policy-header h2 { margin: 0 0 0.3rem; font-size: 1.8rem; }
         .policy-header p, .policy-content p, .policy-content ul { color: var(--text-muted); }
         .policy-header p { margin: 0; }
@@ -26,7 +27,7 @@
             .policy-container { padding-top: 2rem; }
             .policy-header { align-items: flex-start; gap: 1rem; }
             .policy-icon { width: 68px; height: 68px; flex-basis: 68px; border-radius: 14px; }
-            .policy-header h2 { font-size: 1.45rem; }
+            .policy-header h2 { font-size: 1.44rem; }
         }
     </style>
 </head>
@@ -37,7 +38,7 @@
     </script>
     <main class="container policy-container">
         <header class="policy-header">
-            <div class="policy-icon" aria-hidden="true">MW</div>
+            <div class="policy-icon" aria-hidden="true"><img src="../../assets/modern-widget.png" alt="Modern Widgets app icon"></div>
             <div>
                 <h2>Modern Widgets</h2>
                 <p>Privacy Policy for Modern Widgets</p>
@@ -56,7 +57,7 @@
                 <li><strong>No Personal Information:</strong> Modern Widgets does not ask for or collect your name, email address, phone number, account credentials, or payment information.</li>
                 <li><strong>No Network or Internet Access:</strong> Modern Widgets does not declare the Android INTERNET permission and does not communicate with any remote servers.</li>
                 <li><strong>No Analytics, Advertising, or Tracking SDKs:</strong> Modern Widgets does not use third-party analytics, crash-reporting tools, ad networks, or tracking identifiers.</li>
-                <li><strong>No Device Sensor or System Data Access:</strong> Modern Widgets does not request permissions for location, contacts, camera, microphone, storage, Bluetooth, notifications, or installed-app queries. All widget previews (such as clock, weather, battery, music, and system tiles) and widget pack listings shown in Modern Widgets use static built-in sample content rather than reading your live device, weather, or personal data.</li>
+                <li><strong>No Device Sensor or System Data Access:</strong> Modern Widgets does not request permissions for location, contacts, camera, microphone, storage, Bluetooth, notifications, or installed-app queries. All widget previews and widget pack listings shown in Modern Widgets use static built-in sample content rather than reading your live device, weather, or personal data.</li>
             </ul>
 
             <h2>3. Data Stored Locally on Your Device</h2>
