@@ -28,6 +28,41 @@ if (themeToggle) {
     });
 }
 
+// Apps directory has a few dark-only inline styles; keep them aligned with the shared theme tokens.
+if (document.querySelector('.apps-container')) {
+    const appsThemeStyles = document.createElement('style');
+    appsThemeStyles.textContent = `
+        :root[data-theme="light"] body {
+            background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.08), transparent 26%),
+                        radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.07), transparent 28%),
+                        var(--bg-main) !important;
+        }
+        :root[data-theme="light"] .topbar {
+            background: rgba(255, 255, 255, 0.82) !important;
+            border-color: var(--border) !important;
+            box-shadow: 0 10px 28px rgba(17, 24, 39, 0.06) !important;
+        }
+        :root[data-theme="light"] .app-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(249, 250, 251, 0.98)) !important;
+            border-color: var(--border) !important;
+            box-shadow: 0 12px 28px rgba(17, 24, 39, 0.07) !important;
+        }
+        :root[data-theme="light"] .app-card:hover {
+            box-shadow: 0 18px 34px rgba(17, 24, 39, 0.11) !important;
+        }
+        :root[data-theme="light"] .app-icon {
+            background: var(--bg-card) !important;
+            border-color: var(--border) !important;
+        }
+        :root[data-theme="light"] .btn.secondary {
+            background: rgba(255, 255, 255, 0.78) !important;
+            border-color: var(--border) !important;
+            color: var(--text-main) !important;
+        }
+    `;
+    document.head.appendChild(appsThemeStyles);
+}
+
 // Active link highlighting
 const navLinks = document.querySelectorAll('.nav-links a');
 if (navLinks.length > 0) {
